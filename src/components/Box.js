@@ -11,6 +11,7 @@ export default function Box(props) {
             className="boxes"
             style={style} /* JSX wants to have an object for cssStyles!! */
             onClick={()=>props.toggle(props.id)}>
+         {/*onClick={props.toggle} */}
         </div>
             )
 }

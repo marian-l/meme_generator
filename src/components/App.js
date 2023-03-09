@@ -20,18 +20,13 @@ export default function App() {
     // state variable and function for boxes
     const [interactableBoxes, setBoxes] = React.useState(boxes)
 
-    // toggle boxes' color
     function toggle(id) {
-        setBoxes(boxes => boxes.map(box => {
-            if (box.id === id) {
-                return {
-                    ...box,
-                    on: !box.on
-                }
-            } else {
-                return box;
+        setBoxes(boxes => {
+            return boxes.map(
+                box => { return box.id === id ? {...box, on: !box.on} : {...box}
+                // if the id matches the box's id, we can modify the box object.
             }
-        }));
+        )})
     }
     
     // create the box elements to be rendered
@@ -41,6 +36,7 @@ export default function App() {
             id={box.id}
             key={box.id}
             toggle={toggle}
+         /*toggle={() => toggle(box.id)} */
         />)
 
     return ( 
