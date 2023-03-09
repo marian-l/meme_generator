@@ -17,16 +17,34 @@ export default function App() {
         setCount(count => count - 1)
     }
 
-    const interactableBoxes = boxes.map(box => 
+    const [interactableBoxes, setBoxes] = React.useState(boxes)
+
+    function toggle(id) {
+        setBoxes(boxes => boxes.map(box => {
+            if (box.id === id) {
+                return {
+                    ...box,
+                    on: !box.on
+                }
+            } else {
+                return box;
+            }
+        }));
+    }
+    
+
+    const boxElements = interactableBoxes.map(box => 
         <Box 
             on={box.on}
+            id={box.id}
             key={box.id}
+            toggle={toggle}
         />)
 
     return ( 
     <div>
         <h1>Boxes go here:</h1>
-        {interactableBoxes}
+        {boxElements}
     </div>
         )
 }
