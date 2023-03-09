@@ -17,8 +17,10 @@ export default function App() {
         setCount(count => count - 1)
     }
 
+    // state variable and function for boxes
     const [interactableBoxes, setBoxes] = React.useState(boxes)
 
+    // toggle boxes' color
     function toggle(id) {
         setBoxes(boxes => boxes.map(box => {
             if (box.id === id) {
@@ -32,7 +34,7 @@ export default function App() {
         }));
     }
     
-
+    // create the box elements to be rendered
     const boxElements = interactableBoxes.map(box => 
         <Box 
             on={box.on}
