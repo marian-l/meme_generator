@@ -27,18 +27,6 @@ export default function App() {
     <div>
         <h1>Boxes go here:</h1>
         {interactableBoxes}
-        {/** 
-        <NavBar />
-        <UseState />
-        <StateExercises />
-        <MemeCreate />
-        <div className="counter">
-            <button className="counter--minus" onClick={subtract}>–</button>
-            <Counter count={count}/>
-            <button className="counter--plus" onClick={add}>+</button>
-        </div>
-        <Contact />
-        */}    
     </div>
         )
 }
